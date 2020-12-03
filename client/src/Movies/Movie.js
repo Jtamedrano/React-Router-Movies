@@ -14,21 +14,21 @@ export default function Movie(props) {
       .get(`http://localhost:5000/api/movies/${params.id}`) // Study this endpoint with Postman
       .then((response) => {
         // Study this response with a breakpoint or log statements
-        console.log(response.data);
         // and set the response data as the 'movie' slice of state
         setMovie(response.data);
       })
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+  }, [params.id]);
 
-  // Uncomment this only when you have moved on to the stretch goals
-  // const saveMovie = evt => { }
+  const saveMovie = (id) => {
+    props.addToSavedList(movie.id || id);
+  };
 
   if (!movie) {
     return <div>Loading movie information...</div>;
   }
 
-  return <MovieCard movie={movie} />;
+  return <MovieCard movie={movie} addToSavedList={(id) => saveMovie(id)} />;
 }

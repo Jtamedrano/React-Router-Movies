@@ -15,7 +15,6 @@ export default function App() {
         .get('http://localhost:5000/api/movies') // Study this endpoint with Postman
         .then((response) => {
           // Study this response with a breakpoint or log statements
-          console.log(response.data);
           // and set the response data as the 'movieList' slice of state
           setMovieList(response.data);
         })
@@ -26,24 +25,39 @@ export default function App() {
     getMovies();
   }, []);
 
-  console.log(movieList);
-
   const addToSavedList = (id) => {
     // This is stretch. Prevent the same movie from being "saved" more than once
+    const movieNotIncluded =
+      saved.filter((el) => {
+        return el.id === id;
+      }).length === 0;
+    const ammendedSaved = [...saved];
+    if (movieNotIncluded) {
+      const movieToAdd = movieList.filter((movie) => movie.id === id)[0];
+      ammendedSaved.push(movieToAdd);
+      setSaved(ammendedSaved);
+    }
   };
 
   return (
     <div>
-      <SavedList
-        list={
-          [
-            /* This is stretch */
-          ]
-        }
-      />
+      <SavedList list={saved} />
       <Switch>
-        <Route path="/movie/:id" component={Movie} />
-        <Route path="/" render={(props) => <MovieList movies={movieList} />} />
+        <Route
+          path="/movie/:id"
+          render={(props) => (
+            <Movie addToSavedList={(id) => addToSavedList(id)} />
+          )}
+        />
+        <Route
+          path="/"
+          render={(props) => (
+            <MovieList
+              movies={movieList}
+              addToSavedList={(id) => addToSavedList(id)}
+            />
+          )}
+        />
       </Switch>
     </div>
   );

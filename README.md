@@ -26,8 +26,8 @@ Topics:
 
 Once you are done your application will have two routes:
 
-- [ ] [Screenshot of route '/'](https://tk-assets.lambdaschool.com/b9ced241-681f-432a-9047-ef2ba7e34946_first-route.png)
-- [ ] [Screenshot of route '/movies/:id'](https://tk-assets.lambdaschool.com/06f9f448-2804-4b4a-9408-41904af96a4e_second-route.png)
+- [x] [Screenshot of route '/'](https://tk-assets.lambdaschool.com/b9ced241-681f-432a-9047-ef2ba7e34946_first-route.png)
+- [x] [Screenshot of route '/movies/:id'](https://tk-assets.lambdaschool.com/06f9f448-2804-4b4a-9408-41904af96a4e_second-route.png)
 
 #### Set up Routes
 
@@ -49,22 +49,22 @@ If you have completed Parts 1 & 2 feel free to move on to these stretch goals.
 
 #### Refactor so that our code is DRY
 
-- [ ] You may notice that we are using very similar JSX in the `Movie` component and in the `MovieDetails` component in `MovieList.js`. The main difference is the list of stars, which only exists in the "detailed" view of the `Movie` component.
-- [ ] Create a new component in `MovieCard.js` that returns a Movie Card. Then remove the old code from `Movie` and `MovieDetails` and instead return the new `MovieCard` component.
-- [ ] The Movie Card should be flexible enough to handle displaying a movie with or without the list of stars.
+- [x] You may notice that we are using very similar JSX in the `Movie` component and in the `MovieDetails` component in `MovieList.js`. The main difference is the list of stars, which only exists in the "detailed" view of the `Movie` component.
+- [x] Create a new component in `MovieCard.js` that returns a Movie Card. Then remove the old code from `Movie` and `MovieDetails` and instead return the new `MovieCard` component.
+- [x] The Movie Card should be flexible enough to handle displaying a movie with or without the list of stars.
 
 #### Add `Save Movie` functionality
 
-- [ ] You will notice there is a 'Saved Movies' component that we are not currently using. In this step you will add the functionality to save a movie. You will need to pass the `addToSavedList` function to the `Movie` component. Once you have done that you will need to add a click handler to the save button. You will need to uncomment lines 24-27 in `Movie.js` to complete this.
+- [x] You will notice there is a 'Saved Movies' component that we are not currently using. In this step you will add the functionality to save a movie. You will need to pass the `addToSavedList` function to the `Movie` component. Once you have done that you will need to add a click handler to the save button. You will need to uncomment lines 24-27 in `Movie.js` to complete this.
 
 #### Turn your Saved Movie list into `Link`s
 
-- [ ] Your list of saved movies should be links to the movie itself. Study and understand what the `saveMovie` function is doing.
+- [x] Your list of saved movies should be links to the movie itself. Study and understand what the `saveMovie` function is doing.
 
 #### Turn your Saved Movie `Link`s into `NavLink`s
 
-- [ ] Navlink
+- [x] Navlink
 
 ## Submission Format
 
-- [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's Repo). **Please don't merge your own pull request**
+- [x] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's Repo). **Please don't merge your own pull request**
